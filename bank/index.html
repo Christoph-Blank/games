@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title></title>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+    }
+
+    #phaser-example {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <div id="phaser-example"></div>
+    //
+    <script crossorigin src="https://christoph-blank.github.io/game/bank-panic/phaser.min.js"></script>
+    <script type="module">
+
+        import Boot from './Boot.js';
+import Preloader from './Preloader.js';
+import MainMenu from './MainMenu.js';
+import MainGame from './Game.js';
+
+const config = {
+    type: Phaser.AUTO,
+    width: 1024,
+    height: 768,
+    backgroundColor: '#2e91f3',
+    parent: 'phaser-example',
+    scene: [ Boot, Preloader, MainMenu, MainGame ],
+
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    }
+};
+
+let game = new Phaser.Game(config);
+    </script>
+</body>
+</html>
