@@ -2,37 +2,47 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title></title>
+    <title>Minesweeper</title>
 
     <style>
+        /* Volle Bildschirmgröße und kein Scrollen */
         html, body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            width: 100vw;
-            height: 100vh;
             background: black;
+            touch-action: none; /* verhindert Standardgesten */
         }
 
+        /* Container für Phaser */
         #phaser-example {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
         }
 
+        /* Canvas auf volle Größe skalieren */
         canvas {
             display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <div id="phaser-example"></div>
 
-    <!-- Phaser laden -->
-    <script crossorigin src="https://christoph-blank.github.io/game/bank-panic/phaser.min.js"></script>
-
     <!-- Deine Haupt-JavaScript-Datei laden -->
     <script type="module" src="./main.js"></script>
+
+    <!-- Optional: Touch-Scrolling verhindern -->
+    <script>
+        document.body.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
 </body>
 </html>
