@@ -7,7 +7,7 @@ export default class Boot extends Phaser.Scene
 
     preload ()
     {
-        this.load.setBaseURL('https://christoph-blank.github.io/game/');
+        this.load.setBaseURL('https://christoph-blank.github.io/games/bank/');
         this.load.image('loading', 'bank-panic/loading.png');
     }
 
